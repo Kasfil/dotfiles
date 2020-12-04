@@ -1,0 +1,63 @@
+{
+  "diagnostic.enable": false,
+  "diagnostic.displayByAle": true,
+  "coc.preferences.colorSupport": false,
+  "javascript.validate.enable": false,
+  "vimlsp.indexes.projectRootPatterns": [
+    ".git",
+    "autoload",
+    "plugin",
+    "plugged",
+    "plugs"
+  ],
+  "languageserver": {
+    "sumneko-lua": {
+      "command": "/home/kasf/repos/lua-language-server/bin/Linux/lua-language-server",
+      "args": [
+        "-E",
+        "-e",
+        "LANG=\"en_us\"",
+        "/home/kasf/repos/lua-language-server/main.lua"
+      ],
+      "filetypes": ["lua"],
+      "rootPatterns": [".git"],
+      "settings": {
+        "Lua": {
+          "diagnostics": {
+            "enable": true,
+            "globals": ["vim", "use"],
+            "disable": ["lowercase-global"]
+          }
+        }
+      }
+    }
+  },
+  "suggest.completionItemKindLabels": {
+    "keyword": "keyword",
+    "variable": "variable",
+    "value": "value",
+    "operator": "operator",
+    "constructor": "constructor",
+    "function": "function",
+    "reference": "reference",
+    "constant": "constant",
+    "method": "method",
+    "struct": "struct",
+    "class": "class",
+    "interface": "interface",
+    "text": "text",
+    "enum": "enum",
+    "enumMember": "enum member",
+    "module": "module",
+    "color": "color",
+    "property": "property",
+    "field": "field",
+    "unit": "unit",
+    "event": "event",
+    "file": "file",
+    "folder": "folder",
+    "snippet": "snippet",
+    "typeParameter": "type parameter",
+    "default": "buffer word"
+  }
+}
