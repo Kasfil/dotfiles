@@ -97,6 +97,7 @@ lspconfig.gopls.setup{on_attach = custom_on_attach}
 lspconfig.html.setup{on_attach = custom_on_attach}
 lspconfig.jedi_language_server.setup{on_attach = custom_on_attach}
 lspconfig.tsserver.setup{on_attach = custom_on_attach}
+lspconfig.vuels.setup{on_attach = custom_on_attach}
 
 -- Neovim Diagnostic configuration
 -- already merged to Neovim master branch 0.5

@@ -1,6 +1,7 @@
 -- sonokai theme variable config
 vim.api.nvim_set_var('sonokai_style', 'atlantis')
 vim.api.nvim_set_var('sonokai_enable_italic', true)
+vim.api.nvim_set_var('sonokai_transparent_background', true)
 
 -- easymotion
 vim.api.nvim_set_var('EasyMotion_do_mapping', false)
@@ -59,3 +60,10 @@ vim.api.nvim_set_var('completion_enable_snippet', 'vim-vsnip')
 
 -- airline
 vim.api.nvim_set_var('airline_theme', 'sonokai')
+
+-- vsnip
+local vsnip = {
+  javascript = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
+  typescript = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
+}
+vim.api.nvim_set_var('vsnip_filetypes', vsnip)

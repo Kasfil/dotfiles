@@ -64,7 +64,7 @@ local formatopt = {
 vim.bo.expandtab = true
 vim.bo.tabstop = 4
 vim.bo.shiftwidth = 4
-vim.bo.formatoptions = 'crqwjp'
+vim.bo.formatoptions = table.concat(formatopt, ',')
 vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
@@ -78,6 +78,7 @@ vim.cmd('filetype indent on')
 vim.g.mapleader = ','
 
 vim.cmd([[au FocusGained,BufEnter * :checktime]])
+vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]])
 
 require 'plugins'
 require 'lsp'

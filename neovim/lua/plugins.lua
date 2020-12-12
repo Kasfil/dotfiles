@@ -27,13 +27,18 @@ return require('packer').startup(function ()
   use 'mhinz/vim-signify'
   use 'vim-airline/vim-airline'
   -- filetype improvement
+  use 'sheerun/vim-polyglot'
   -- php in html
   use {'captbaritone/better-indent-support-for-php-with-html', ft = {'php'}}
   -- javascript
   use {'pangloss/vim-javascript', ft = {'javascript', 'javascript.jsx', 'typescript'}}
+  use {'othree/jsdoc-syntax.vim', ft = {'javascript', 'javascript.jsx', 'typescript'}}
+  -- handlebar
+  use 'mustache/vim-mustache-handlebars'
   -- miscellaneous
   use 'dstein64/vim-startuptime'
   use 'embear/vim-localvimrc'
+  use 'junegunn/vim-easy-align'
   use 'editorconfig/editorconfig-vim'
   use 'sainnhe/sonokai'
 end)

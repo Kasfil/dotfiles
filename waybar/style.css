@@ -1,0 +1,103 @@
+* {
+    font-family: "Roboto", "Font Awesome 5 Free";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #222f3e;
+    color: #f8f8f2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #1dd1a1;
+}
+
+#workspaces button.focused {
+    background: rgba(16, 172, 132, 0.3);
+}
+
+#workspaces button:hover {
+    background: rgba(16, 172, 132, 0.3);
+}
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#clock,
+#custom-power,
+#idle_inhibitor,
+#custom-pacman,
+#mpd {
+    padding: 0 5px;
+    margin: 0 4px;
+}
+
+#window {
+    padding: 0 10px;
+    color: #feca57;
+    margin-left: 12px;
+    font-weight: 700;
+}
+
+#clock {
+    padding: 0 7px;
+    margin-right: 0;
+    color: #03738c;
+    background-color: #48dbfb;
+    font-weight: 700;
+}
+
+#idle_inhibitor {
+    color: #c8d6e5;
+}
+
+#idle_inhibitor.activated {
+    color: #222f3e;
+    background-color: #feca57;
+}
+
+#network {
+    color: #48dbfb;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#cpu {
+    color: #00d2d3;
+}
+
+#memory {
+    color: #48dbfb;
+}
+
+#backlight {
+    color: #1dd1a1;
+}
+
+#mode {
+    background-color: #fd971f;
+}
+
+#custom-power {
+    background-color: #ff6b6b;
+    padding: 0 10px;
+    margin-left: 0;
+}
+
+#battery {
+    color: #feca57;
+}
+
+#custom-pacman {
+    color: #feca57;
+}
