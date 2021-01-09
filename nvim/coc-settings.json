@@ -1,0 +1,185 @@
+{
+  "diagnostic.enable": true,
+  "diagnostic.virtualTextLines": 5,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextPrefix": "    ",
+  "coc.preferences.colorSupport": false,
+  "javascript.validate.enable": false,
+  "vimlsp.indexes.projectRootPatterns": [
+    ".git",
+    "$VIMRUNTIME/lua"
+  ],
+  "tsserver.trace.server": "verbose",
+  "languageserver": {
+    "sumneko-lua": {
+      "command": "/home/kasf/repos/lua-language-server/bin/Linux/lua-language-server",
+      "args": [
+        "-E",
+        "-e",
+        "LANG=\"en_us\"",
+        "/home/kasf/repos/lua-language-server/main.lua"
+      ],
+      "filetypes": ["lua"],
+      "rootPatterns": [".git"],
+      "settings": {
+        "Lua": {
+          "workspace": {
+            "library": {
+              "/home/kasf/.config/nvim/lua": true,
+              "/home/kasf/.selfbuild/neovim-nightly/share/nvim/runtime/lua": true,
+              "/home/kasf/.selfbuild/neovim-nightly/share/nvim/runtime/lua/vim/lsp": true,
+              "/usr/share/awesome/lib": true
+            }
+          },
+          "diagnostics": {
+            "enable": true,
+            "globals": ["vim", "use", "awesome", "client"],
+            "disable": ["lowercase-global"]
+          }
+        }
+      }
+    },
+    "dls": {
+      "command": "diagnostic-languageserver",
+      "args": ["--stdio"],
+      "filetypes": [
+        "python",
+        "javascript",
+        "typescript",
+        "php",
+        "go"
+      ],
+      "initializationOptions": {
+        "linters": {
+          "eslint": {
+            "command": "./node_modules/.bin/eslint",
+            "rootPatterns": [
+              ".git",
+              ".eslintrc.js",
+              ".eslintrc.cjs",
+              ".eslintrc.yaml",
+              ".eslintrc.yml",
+              ".eslintrc.json",
+              ".eslintrc",
+              "package.json"
+            ],
+            "debounce": 100,
+            "args": [
+              "--stdin",
+              "--stdin-filename",
+              "%filepath",
+              "--format",
+              "json"
+            ],
+            "sourceName": "eslint",
+            "parseJson": {
+              "errorsRoot": "[0].messages",
+              "line": "line",
+              "column": "column",
+              "endLine": "endLine",
+              "endColumn": "endColumn",
+              "message": "${message} [${ruleId}]",
+              "security": "severity"
+            },
+            "securities": {
+              "2": "error",
+              "1": "warning"
+            }
+          },
+          "phpcs": {
+            "command": "./vendor/bin/phpcs",
+            "debounce": 100,
+            "rootPatterns": [ "composer.json", "composer.lock", "vendor", ".git" ],
+            "args": ["--report=emacs", "-s", "-" ],
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "sourceName": "phpcs",
+            "formatLines": 1,
+            "formatPattern": [
+              "^.*:(\\d+):(\\d+):\\s+(.*)\\s+-\\s+(.*)(\\r|\\n)*$",
+              {
+                "line": 1,
+                "column": 2,
+                "message": 4,
+                "security": 3
+              }
+            ],
+            "securities": {
+              "error": "error",
+              "warning": "warning"
+            }
+          },
+          "pylint": {
+            "sourceName": "pylint",
+            "command": "pylint",
+            "args": [
+              "--output-format",
+              "text",
+              "--score",
+              "no",
+              "--msg-template",
+              "'{line}:{column}:{category}:{msg} ({msg_id}:{symbol})'",
+              "%file"
+            ],
+            "formatPattern": [
+              "^(\\d+?):(\\d+?):([a-z]+?):(.*)$",
+              {
+                "line": 1,
+                "column": 2,
+                "security": 3,
+                "message": 4
+              }
+            ],
+            "rootPatterns": [".git", "pyproject.toml", "setup.py"],
+            "securities": {
+              "informational": "hint",
+              "refactor": "info",
+              "convention": "info",
+              "warning": "warning",
+              "error": "error",
+              "fatal": "error"
+            },
+            "offsetColumn": 1,
+            "formatLines": 1
+          }
+        },
+        "filetypes": {
+          "javascript": "eslint",
+          "typescript": "eslint",
+          "php": "phpcs",
+          "python": "pylint"
+        }
+      }
+    }
+  },
+  "suggest.completionItemKindLabels": {
+    "keyword": "keyword",
+    "variable": "variable",
+    "value": "value",
+    "operator": "operator",
+    "constructor": "constructor",
+    "function": "function",
+    "reference": "reference",
+    "constant": "constant",
+    "method": "method",
+    "struct": "struct",
+    "class": "class",
+    "interface": "interface",
+    "text": "text",
+    "enum": "enum",
+    "enumMember": "enum member",
+    "module": "module",
+    "color": "color",
+    "property": "property",
+    "field": "field",
+    "unit": "unit",
+    "event": "event",
+    "file": "file",
+    "folder": "folder",
+    "snippet": "snippet",
+    "typeParameter": "type parameter",
+    "default": "buffer word"
+  }
+}

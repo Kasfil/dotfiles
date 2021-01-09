@@ -11,3 +11,6 @@ indent_size = 2
 
 [*.lua]
 indent_size = 2
+
+[*.vim]
+indent_size = 4
