@@ -1,3 +1,10 @@
 # rsync config
 **/.stfolder/
 **/.stignore
+
+# editor dirs
+**/.vim/
+**/.vscode/
+
+# Python common
+**/__pycache__/
