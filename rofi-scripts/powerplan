@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+case "${DESKTOP_SESSION}" in
+  "qtile")
+    logoutCommand="qtile-cmd -o cmd -f shutdown";;
+  "herbsluftwm")
+    logoutCommand="herbstclient quit";;
+esac
+
+options="Lock
+Shutdown
+Reboot
+Logout
+Suspend"
+
+selection=$(echo -e "${options}" | rofi -dmenu -lines 5 -i -p "What you wanna do:")
+
+case "${selection}" in
+  "Lock")
+    betterlockscreen -l blur;;
+  "Logout")
+    eval $logoutCommand;;
+  "Suspend")
+    systemctl suspend;;
+  "Reboot")
+    systemctl reboot;;
+  "Shutdown")
+    systemctl poweroff;;
+esac
