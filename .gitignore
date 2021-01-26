@@ -8,3 +8,6 @@
 
 # Python common
 **/__pycache__/
+
+# google credentials
+**/credentials.json
