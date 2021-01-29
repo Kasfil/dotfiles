@@ -2,8 +2,8 @@
 
 case "${DESKTOP_SESSION}" in
   "qtile")
-    logoutCommand="qtile-cmd -o cmd -f shutdown";;
-  "herbsluftwm")
+    logoutCommand="qtile obj-cmd -o cmd -f shutdown";;
+  "herbstluftwm")
     logoutCommand="herbstclient quit";;
 esac
 
