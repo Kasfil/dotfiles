@@ -2,7 +2,7 @@
 
 case "${DESKTOP_SESSION}" in
   "qtile")
-    logoutCommand="qtile obj-cmd -o cmd -f shutdown";;
+    logoutCommand="qtile cmd-obj -o cmd -f shutdown";;
   "herbstluftwm")
     logoutCommand="herbstclient quit";;
 esac
