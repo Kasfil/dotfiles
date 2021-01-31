@@ -1,21 +1,27 @@
+vim.cmd([[
+function! DiagnosticInfo()
+  return v:lua.DiagnosticsInfoStatusLine()
+endfunction
+]])
+
 vim.g.lightline = {
-  colorscheme = 'sonokai',
+  colorscheme = 'palenight',
   separator = { left = '', right = ''},
   subseparator = { left = '', right = ''},
   active = {
     left = {
       { 'mode', 'paste' },
-      { 'readonly', 'ginaBranch', 'signify' },
-      { 'filename', 'modified', 'cocmessages' }
+      { 'readonly', 'ginaBranch' },
+      { 'filename', 'modified' }
     },
     right = {
-      { 'lineinfo', 'percent', 'diagnosticInfo' },
-      { 'filetype' },
+      { 'lineinfo', 'percent' },
+      { 'diagnosticInfo', 'filetype' },
       { 'fileformat', 'fileencoding' }
     },
   },
   component_expand = {
-    diagnosticInfo = 'StatusDiagnostic',
+    diagnosticInfo = 'DiagnosticInfo',
   },
   component_function = {
     signify = 'sy#repo#get_stats_decorated',

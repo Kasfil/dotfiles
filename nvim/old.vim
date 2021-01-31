@@ -20,7 +20,8 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Color preview
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Colorscheme
-Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/sonokai'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " ## filetype helper
 " Html in php indent support
@@ -201,7 +202,10 @@ lua require 'plugins/treesitter'
 let g:javascript_plugin_jsdoc = 1
 
 " ### Sonokai
-let g:sonokai_style = 'atlantis'
+let g:sonokai_style = 'andromeda'
+
+" ### Palenight
+let g:palenight_terminal_italics = 1
 
 " ### Lightline
 lua require 'plugins/lightline'
@@ -218,7 +222,6 @@ let g:coc_global_extensions = [
     \ 'coc-yaml',
     \ 'coc-snippets',
     \ 'coc-tsserver',
-    \ 'coc-jedi',
     \ 'coc-phpls',
     \ 'coc-vimlsp',
     \ 'coc-go',
@@ -281,9 +284,9 @@ let g:floaterm_keymap_new    = '<F7>'
 let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_height = 0.7
 let g:floaterm_autoclose = 2
 nnoremap <silent> <leader>gg <CMD>FloatermNew --height=0.9 --width=0.9 lazygit<CR>
-nnoremap <silent> <leader>sc <CMD>FloatermNew peaclock<CR>
 
 " ### fzf.vim
 let g:fzf_preview_window = ['right:50%']
@@ -297,7 +300,10 @@ nnoremap <silent> <leader>fb <CMD>Buffers<CR>
 nnoremap <silent> <leader>fh <CMD>Helptags<CR>
 nnoremap <silent> <leader>rg <CMD>Rg<CR>
 
-
+" ##########
+" ########## Hexokinase
+" ##########
+let g:Hexokinase_optOutPatterns = ['colour_names']
 
 " ##########
 " ########## Custom Editor mapping
@@ -334,7 +340,7 @@ nnoremap \b <CMD>Bdelete<CR>
 nnoremap Q <CMD>q!<CR>
 
 " ### Set color scheme
-colorscheme sonokai
+colorscheme palenight
 
 " ##########
 " ########## Custom Highlight color

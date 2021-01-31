@@ -79,6 +79,3 @@ cmd('filetype plugin on')
 cmd('filetype indent on')
 
 g.mapleader = ','
-
-cmd([[au FocusGained,BufEnter * :checktime]])
-cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]])

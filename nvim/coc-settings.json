@@ -14,12 +14,12 @@
   "tsserver.trace.server": "verbose",
   "languageserver": {
     "sumneko-lua": {
-      "command": "/home/kasf/repos/lua-language-server/bin/Linux/lua-language-server",
+      "command": "/home/kasf/github/lua-language-server/bin/Linux/lua-language-server",
       "args": [
         "-E",
         "-e",
         "LANG=\"en_us\"",
-        "/home/kasf/repos/lua-language-server/main.lua"
+        "/home/kasf/github/lua-language-server/main.lua"
       ],
       "filetypes": ["lua"],
       "rootPatterns": [".git"],
@@ -43,7 +43,7 @@
     },
     "dls": {
       "command": "diagnostic-languageserver",
-      "args": ["--stdio"],
+      "args": ["--stdio", "--log-level", "2"],
       "filetypes": [
         "python",
         "javascript",
